@@ -14,7 +14,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="taskricon" translatesAutoresizingMaskIntoConstraints="NO" id="Jo9-0f-Ils">
+                                <rect key="frame" x="79" y="320" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="256" id="TKT-0o-LyX"/>
+                                    <constraint firstAttribute="height" constant="256" id="sni-VS-W5D"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="0.097692497259409983" green="0.19541083492304462" blue="0.32438158928440308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Jo9-0f-Ils" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="YPl-2N-9SE"/>
+                            <constraint firstItem="Jo9-0f-Ils" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Yhw-1P-6ZX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -23,4 +36,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="taskricon" width="912" height="910"/>
+    </resources>
 </document>
