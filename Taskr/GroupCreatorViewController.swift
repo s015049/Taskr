@@ -21,6 +21,12 @@ class GroupCreatorViewController: UIViewController {
         ref = Database.database().reference()
     }
     
+    func createGroup() {
+        // adds group to master list of groups
+        ref.child("groups").child(newGroup.name).setValue(["tasks": [], "members": [Auth.auth().currentUser?.uid]])
+        // adds group to user's list of groups
+    ref.child("users").child(Auth.auth().currentUser?.uid).child("groups").setValue(newGroup.name)
+    }
 
     
 
