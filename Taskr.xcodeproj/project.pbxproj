@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		2A0954F323FD63E100A167C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2A0954F123FD63E100A167C1 /* LaunchScreen.storyboard */; };
 		2A0954FE23FD63E100A167C1 /* TaskrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0954FD23FD63E100A167C1 /* TaskrTests.swift */; };
 		2A09550923FD63E100A167C1 /* TaskrUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A09550823FD63E100A167C1 /* TaskrUITests.swift */; };
+		58D83F1B2400275C00CA3A70 /* GroupCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */; };
 		B87D1BF1F4CA91D88854E905 /* Pods_Taskr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51EFEB4014F4EB6B8176FDE8 /* Pods_Taskr.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		2A09550A23FD63E100A167C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3F2A458D748D6FBE146812DC /* Pods-Taskr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taskr.release.xcconfig"; path = "Target Support Files/Pods-Taskr/Pods-Taskr.release.xcconfig"; sourceTree = "<group>"; };
 		51EFEB4014F4EB6B8176FDE8 /* Pods_Taskr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Taskr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreatorViewController.swift; sourceTree = "<group>"; };
 		8B597A8A207ABE12266181DE /* Pods-Taskr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taskr.debug.xcconfig"; path = "Target Support Files/Pods-Taskr/Pods-Taskr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,7 +89,6 @@
 				8B597A8A207ABE12266181DE /* Pods-Taskr.debug.xcconfig */,
 				3F2A458D748D6FBE146812DC /* Pods-Taskr.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -123,6 +124,7 @@
 				2A0954EF23FD63E100A167C1 /* Assets.xcassets */,
 				2A0954F123FD63E100A167C1 /* LaunchScreen.storyboard */,
 				2A0954F423FD63E100A167C1 /* Info.plist */,
+				58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */,
 			);
 			path = Taskr;
 			sourceTree = "<group>";
@@ -330,6 +332,7 @@
 			files = (
 				2A0954EB23FD63DC00A167C1 /* ViewController.swift in Sources */,
 				2A0954E723FD63DC00A167C1 /* AppDelegate.swift in Sources */,
+				58D83F1B2400275C00CA3A70 /* GroupCreatorViewController.swift in Sources */,
 				2A0954E923FD63DC00A167C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
