@@ -6,12 +6,12 @@ target 'Taskr' do
   # Comment the next line if you don't want to use dynamic frameworks
 
   # Pods for Taskr
-     
      pod 'Firebase/Analytics'
      pod 'Firebase/Auth'
      pod 'Firebase/Storage'
      pod 'Firebase/Database'
      pod 'Firebase/Messaging'
+
 
  
 end
