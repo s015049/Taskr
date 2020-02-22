@@ -20,7 +20,7 @@ class GroupCreatorViewController: UIViewController {
         // below prob not needed
         ref = Database.database().reference()
     }
-    
+    // commit engine please see me
     func createGroup() {
         // adds group to master list of groups
         ref.child("groups").child(newGroup.name).setValue(["tasks": [], "members": [Auth.auth().currentUser?.uid]])
