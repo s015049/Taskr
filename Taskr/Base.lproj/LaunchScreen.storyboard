@@ -16,17 +16,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="taskricon" translatesAutoresizingMaskIntoConstraints="NO" id="Jo9-0f-Ils">
-                                <rect key="frame" x="79" y="320" width="256" height="256"/>
+                                <rect key="frame" x="79" y="244" width="256" height="256"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="256" id="TKT-0o-LyX"/>
                                     <constraint firstAttribute="height" constant="256" id="sni-VS-W5D"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taskr" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaX-q0-HBQ">
+                                <rect key="frame" x="135.5" y="550" width="143" height="82"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="60"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.097692497259409983" green="0.19541083492304462" blue="0.32438158928440308" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Jo9-0f-Ils" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="YPl-2N-9SE"/>
-                            <constraint firstItem="Jo9-0f-Ils" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Yhw-1P-6ZX"/>
+                            <constraint firstItem="Jo9-0f-Ils" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="33A-rZ-9Lg"/>
+                            <constraint firstItem="Jo9-0f-Ils" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="c2M-UE-7Hm"/>
+                            <constraint firstItem="EaX-q0-HBQ" firstAttribute="top" secondItem="Jo9-0f-Ils" secondAttribute="bottom" constant="50" id="mF6-s3-50F"/>
+                            <constraint firstItem="EaX-q0-HBQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qfn-9C-8Sd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -37,6 +45,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="taskricon" width="912" height="910"/>
+        <image name="taskricon" width="827" height="828"/>
     </resources>
 </document>

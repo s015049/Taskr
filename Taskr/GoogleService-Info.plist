@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>403730884571-2qnd0fb2epg7nc329isqn45q96bit5sp.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.403730884571-2qnd0fb2epg7nc329isqn45q96bit5sp</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCLsNPmaF3kAqlXA63XSod8RmYHtkJbFkg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>403730884571</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.BigBrainCorporation.Taskr</string>
+	<key>PROJECT_ID</key>
+	<string>taskr-3276f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>taskr-3276f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:403730884571:ios:968aacb1d8da90117629fe</string>
+	<key>DATABASE_URL</key>
+	<string>https://taskr-3276f.firebaseio.com</string>
+</dict>
+</plist>
