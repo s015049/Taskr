@@ -221,6 +221,9 @@
                                 <state key="normal" title="Create New Group +">
                                     <color key="titleColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="7fn-WP-GGI" kind="show" id="EPk-6T-y4C"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CBW-iw-TWt">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
@@ -296,6 +299,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bDk-fi-mZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1589.8550724637682" y="128.57142857142856"/>
+        </scene>
+        <!--Group Creator View Controller-->
+        <scene sceneID="IM4-oC-RWc">
+            <objects>
+                <viewController id="7fn-WP-GGI" userLabel="Group Creator View Controller" customClass="GroupCreatorViewController" customModule="Taskr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VZE-QD-isg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="3Sj-VZ-eTf"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="2wd-cP-Gnz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZVp-Ui-LeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2378" y="129"/>
         </scene>
         <!--Log In View Controller-->
         <scene sceneID="1Vn-8d-ZWH">
