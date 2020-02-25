@@ -20,7 +20,7 @@ class GroupCreatorViewController: UIViewController {
         // below prob not needed
         ref = Database.database().reference()
     }
-    // commit engine please see me
+    // commit engine please see me please 2.0
     func createGroup() {
         // adds group to master list of groups
         /* commented this part out so it could run, there was an error with the newGroup call
