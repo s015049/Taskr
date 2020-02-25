@@ -2,12 +2,11 @@
 //  Group.swift
 //  Taskr
 //
-//  Created by Alex Gerstein (student LM) on 2/21/20.
+//  Created by Maxwell Serota (student LM) on 2/25/20.
 //  Copyright © 2020 BigBrainCorporation. All rights reserved.
-// test
+//
 
 import Foundation
-
 class Group {
     
     var members = [""]
