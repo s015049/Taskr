@@ -9,9 +9,14 @@ import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
 import UIKit
+class homeScreenCell : UITableViewCell{
+    
+}
 
 class HomeScreenViewController: UIViewController {
 
+    @IBOutlet weak var completionButton: UIButton!
+    @IBOutlet weak var groupName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

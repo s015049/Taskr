@@ -12,11 +12,13 @@ class Task{
     var description = ""
     var person = ""
     var dueDate = Date()
+    var isCompleted : Bool
 
     init(description: String, person: String, dueDate: Date){
         self.description = description
         self.person = person
         self.dueDate = dueDate
+        self.isCompleted = false
     }
 
 }
