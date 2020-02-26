@@ -11,10 +11,13 @@ class Group {
     
     var members = [""]
     var tasks: [Task] = []
+    var name = ""
     
-    init(members: [String], tasks: [Task]){
+    init(members: [String], tasks: [Task], name: String){
         self.members = members
         self.tasks = tasks
+        self.name = name
+        
     }
     
 }
