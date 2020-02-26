@@ -20,4 +20,10 @@ class Group {
         
     }
     
+    init() {
+        self.members = [""]
+        self.tasks = [Task]
+        self.name = ""
+    }
+    
 }

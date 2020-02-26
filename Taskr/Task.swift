@@ -18,5 +18,11 @@ class Task{
         self.person = person
         self.dueDate = dueDate
     }
+    
+    init() {
+        self.description = ""
+        self.person = ""
+        self.dueDate = Date()
+    }
 
 }
