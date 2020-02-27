@@ -40,14 +40,20 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     
     // commit engine please see me please 2.2
     
-    @IBAction func addGroup(_ sender: UIButton) {
+    @IBAction func addGroup(_ sender: UIButton) { // ADD OPTIONAL BINDING!
         // adds group to master list of groups
-        var membersArr = members.text!
+        let membersArr = (members.text! + ","+Auth.auth().currentUser!.email!).components(separatedBy: ",")
+        let groups: [String] = [name.text!]
         
-        ref.child("groups").child(name.text!).setValue(["tasks": [], "members": [Auth.auth().currentUser?.uid]])
+        ref.child("groups").child(name.text!).setValue(["tasks": [], "members": membersArr])
              
-            // adds group to user's list of groups
-        ref.child("users").child(Auth.auth().currentUser!.uid).child("groups").setValue(name.text!)
-    }
+        // adds group to user's list of groups by iterating thourgh all members
+        for m in membersArr {
+            ref.child("users").child(m).child("groups").setValue(groups)
+        } // end of for-loop
+        
+        self.dismiss(animated: true, completion: nil)
+        print("Group \(name.text!) added")
+    } // end of addGroup
     
 }
