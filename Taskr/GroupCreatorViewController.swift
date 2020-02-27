@@ -15,6 +15,7 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var members: UITextField!
     @IBOutlet weak var addGroupButtonOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         FirebaseApp.configure()
@@ -41,11 +42,12 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func addGroup(_ sender: UIButton) {
         // adds group to master list of groups
-            /* commented this part out so it could run, there was an error with the newGroup call
-             ref.child("groups").child(newGroup.name).setValue(["tasks": [], "members": [Auth.auth().currentUser?.uid]])
+        var membersArr = members.text!
+        
+        ref.child("groups").child(name.text!).setValue(["tasks": [], "members": [Auth.auth().currentUser?.uid]])
              
             // adds group to user's list of groups
-             ref.child("users").child(Auth.auth().currentUser?.uid).child("groups").setValue(newGroup.name) */
+        ref.child("users").child(Auth.auth().currentUser!.uid).child("groups").setValue(name.text!)
     }
     
 }
