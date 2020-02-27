@@ -14,9 +14,8 @@ class homeScreenCell : UITableViewCell{
 }
 
 class HomeScreenViewController: UIViewController {
-
-    @IBOutlet weak var completionButton: UIButton!
-    @IBOutlet weak var groupName: UILabel!
+    @IBOutlet weak var groupNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
