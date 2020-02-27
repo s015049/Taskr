@@ -1,7 +1,7 @@
 //
 //  HomeScreenViewController.swift
 //  Taskr
-//
+// suck my dick
 //  Created by Maxwell Serota (student LM) on 2/23/20.
 //  Copyright © 2020 BigBrainCorporation. All rights reserved.
 //
@@ -14,7 +14,7 @@ class homeScreenCell : UITableViewCell{
     @IBOutlet weak var groupNameLabel : UILabel!
     @IBOutlet weak var taskTableView : UITableView!
     var ref: DatabaseReference! = Database.database().reference()
-
+ // things
 }
 
 class groupCell : UITableViewCell{
