@@ -520,6 +520,104 @@
             </objects>
             <point key="canvasLocation" x="897" y="606"/>
         </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="yOr-rB-gMO">
+            <objects>
+                <viewController id="3TO-Lp-3bR" customClass="addTaskViewController" customModule="Taskr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wu8-MV-cuB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwR-AS-OhC">
+                                <rect key="frame" x="0.0" y="807" width="414" height="50"/>
+                                <color key="backgroundColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="IxS-19-Nfc"/>
+                                    <constraint firstAttribute="height" constant="50" id="aeh-CC-t5D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="30"/>
+                                <state key="normal" title="Add Task +">
+                                    <color key="titleColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTaskButtonClicked:" destination="3TO-Lp-3bR" eventType="touchUpInside" id="efV-u1-ltP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VOl-pV-wyp">
+                                <rect key="frame" x="50" y="94" width="112" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DVL-Ui-xfa">
+                                <rect key="frame" x="50" y="142" width="314" height="34"/>
+                                <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9Q-pt-592">
+                                <rect key="frame" x="50" y="206" width="91" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nez-2w-WoW">
+                                <rect key="frame" x="50" y="254" width="314" height="34"/>
+                                <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assigned to:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="upK-qD-Neo">
+                                <rect key="frame" x="50" y="318" width="115" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xXh-9V-IgJ">
+                                <rect key="frame" x="50" y="366" width="314" height="34"/>
+                                <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="DVL-Ui-xfa" firstAttribute="top" secondItem="VOl-pV-wyp" secondAttribute="bottom" constant="20" id="2QV-mO-Hz8"/>
+                            <constraint firstItem="DVL-Ui-xfa" firstAttribute="leading" secondItem="Jgk-dB-gJ4" secondAttribute="leading" constant="50" id="3ij-xR-9Jf"/>
+                            <constraint firstItem="Jgk-dB-gJ4" firstAttribute="trailing" secondItem="xXh-9V-IgJ" secondAttribute="trailing" constant="50" id="5TN-F4-Ga4"/>
+                            <constraint firstItem="upK-qD-Neo" firstAttribute="leading" secondItem="Jgk-dB-gJ4" secondAttribute="leading" constant="50" id="75L-IF-bcP"/>
+                            <constraint firstItem="t9Q-pt-592" firstAttribute="top" secondItem="DVL-Ui-xfa" secondAttribute="bottom" constant="30" id="8zG-1z-EDB"/>
+                            <constraint firstItem="SwR-AS-OhC" firstAttribute="leading" secondItem="Jgk-dB-gJ4" secondAttribute="leading" id="EBo-8T-egZ"/>
+                            <constraint firstItem="Jgk-dB-gJ4" firstAttribute="trailing" secondItem="nez-2w-WoW" secondAttribute="trailing" constant="50" id="K99-Sa-S3y"/>
+                            <constraint firstItem="VOl-pV-wyp" firstAttribute="top" secondItem="Jgk-dB-gJ4" secondAttribute="top" constant="50" id="KT2-eN-c4v"/>
+                            <constraint firstItem="nez-2w-WoW" firstAttribute="leading" secondItem="Jgk-dB-gJ4" secondAttribute="leading" constant="50" id="M6c-pD-srA"/>
+                            <constraint firstItem="t9Q-pt-592" firstAttribute="leading" secondItem="Jgk-dB-gJ4" secondAttribute="leading" constant="50" id="QS6-WO-WoI"/>
+                            <constraint firstAttribute="trailing" secondItem="SwR-AS-OhC" secondAttribute="trailing" id="Wq3-m8-xYW"/>
+                            <constraint firstItem="DVL-Ui-xfa" firstAttribute="top" secondItem="VOl-pV-wyp" secondAttribute="bottom" constant="20" id="aW7-XG-kQ0"/>
+                            <constraint firstItem="nez-2w-WoW" firstAttribute="top" secondItem="t9Q-pt-592" secondAttribute="bottom" constant="20" id="cb0-4t-07W"/>
+                            <constraint firstItem="upK-qD-Neo" firstAttribute="top" secondItem="nez-2w-WoW" secondAttribute="bottom" constant="30" id="eKE-t5-wkO"/>
+                            <constraint firstItem="xXh-9V-IgJ" firstAttribute="leading" secondItem="Jgk-dB-gJ4" secondAttribute="leading" constant="50" id="fTm-YW-4rp"/>
+                            <constraint firstItem="Jgk-dB-gJ4" firstAttribute="trailing" secondItem="DVL-Ui-xfa" secondAttribute="trailing" constant="50" id="gLw-fl-0JX"/>
+                            <constraint firstItem="VOl-pV-wyp" firstAttribute="leading" secondItem="Jgk-dB-gJ4" secondAttribute="leading" constant="50" id="jDN-lf-0cG"/>
+                            <constraint firstItem="Jgk-dB-gJ4" firstAttribute="bottom" secondItem="SwR-AS-OhC" secondAttribute="bottom" constant="5" id="o1X-Wf-mLu"/>
+                            <constraint firstItem="xXh-9V-IgJ" firstAttribute="top" secondItem="upK-qD-Neo" secondAttribute="bottom" constant="20" id="yA4-Te-dDn"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jgk-dB-gJ4"/>
+                    </view>
+                    <connections>
+                        <outlet property="addTaskButton" destination="SwR-AS-OhC" id="Wvx-ui-TFK"/>
+                        <outlet property="assignedToTextField" destination="xXh-9V-IgJ" id="1sD-1r-7yR"/>
+                        <outlet property="descriptionTextField" destination="DVL-Ui-xfa" id="G0f-Cm-Rw8"/>
+                        <outlet property="dueDateTextField" destination="nez-2w-WoW" id="u1X-UE-h9a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7to-Qk-RB0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1589.8550724637682" y="797.54464285714278"/>
+        </scene>
     </scenes>
     <resources>
         <image name="taskricon" width="827" height="828"/>
