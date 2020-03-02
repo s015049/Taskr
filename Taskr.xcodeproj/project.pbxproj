@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190C4AEE240810A90050F3C5 /* addTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190C4AED240810A90050F3C5 /* addTaskViewController.swift */; };
 		2A0954E723FD63DC00A167C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0954E623FD63DC00A167C1 /* AppDelegate.swift */; };
 		2A0954E923FD63DC00A167C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0954E823FD63DC00A167C1 /* SceneDelegate.swift */; };
 		2A0954EB23FD63DC00A167C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0954EA23FD63DC00A167C1 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		190C4AED240810A90050F3C5 /* addTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addTaskViewController.swift; sourceTree = "<group>"; };
 		2A0954E323FD63DC00A167C1 /* Taskr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Taskr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A0954E623FD63DC00A167C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2A0954E823FD63DC00A167C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */,
 				585CEBBF2401CEB0000B57DC /* LoginViewController.swift */,
 				585CEBC12401CEBB000B57DC /* SignUpViewController.swift */,
+				190C4AED240810A90050F3C5 /* addTaskViewController.swift */,
 			);
 			path = Taskr;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				585CEBC22401CEBB000B57DC /* SignUpViewController.swift in Sources */,
 				2A0954EB23FD63DC00A167C1 /* ViewController.swift in Sources */,
 				2A0954E723FD63DC00A167C1 /* AppDelegate.swift in Sources */,
+				190C4AEE240810A90050F3C5 /* addTaskViewController.swift in Sources */,
 				58D83F1B2400275C00CA3A70 /* GroupCreatorViewController.swift in Sources */,
 				585CEBC02401CEB0000B57DC /* LoginViewController.swift in Sources */,
 				2A0954E923FD63DC00A167C1 /* SceneDelegate.swift in Sources */,
