@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/s015049/Desktop/Code/Taskr/Taskr/homeScreen.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:Taskr.xcodeproj">
    </FileRef>
    <FileRef
