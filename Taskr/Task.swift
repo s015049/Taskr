@@ -25,6 +25,7 @@ class Task{
         self.description = ""
         self.person = ""
         self.dueDate = Date()
+        self.isCompleted = false
     }
 
 }
