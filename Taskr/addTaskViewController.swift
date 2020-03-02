@@ -7,7 +7,7 @@
 
 import UIKit
 
-class addTaskViewController: UIViewController {
+class addTaskViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var addTaskButton: UIButton!
     @IBOutlet weak var descriptionTextField: UITextField!
