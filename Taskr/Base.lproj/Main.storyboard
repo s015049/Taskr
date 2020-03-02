@@ -603,6 +603,7 @@
                                                             </tableViewCellContentView>
                                                             <connections>
                                                                 <outlet property="isCompleteButton" destination="FB6-0a-lMQ" id="rhz-hU-mXp"/>
+                                                                <outlet property="taskDescriptionLabel" destination="fjG-go-mdb" id="0Z6-t4-8ui"/>
                                                                 <outlet property="taskNameLabel" destination="QKV-cV-5z5" id="j4R-03-BKK"/>
                                                             </connections>
                                                         </tableViewCell>

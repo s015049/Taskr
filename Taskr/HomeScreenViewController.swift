@@ -42,7 +42,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         return UITableViewCell()
     }
     
-    @IBOutlet weak var groupNameLabel: UILabel!
     var ref: DatabaseReference!
 
     
