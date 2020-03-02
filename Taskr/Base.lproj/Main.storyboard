@@ -210,7 +210,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkD-B7-4q8">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkD-B7-4q8">
                                 <rect key="frame" x="0.0" y="758" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -247,9 +247,8 @@
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHh-n0-Vwa">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mHh-n0-Vwa">
                                 <rect key="frame" x="20" y="180" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -257,6 +256,14 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="WkD-B7-4q8" firstAttribute="leading" secondItem="lEF-8D-Uv7" secondAttribute="leading" id="6zj-sz-jNd"/>
+                            <constraint firstItem="WkD-B7-4q8" firstAttribute="trailing" secondItem="lEF-8D-Uv7" secondAttribute="trailing" id="HmP-Xf-At5"/>
+                            <constraint firstItem="lEF-8D-Uv7" firstAttribute="trailing" secondItem="mHh-n0-Vwa" secondAttribute="trailing" constant="80" id="Hqx-Sp-57W"/>
+                            <constraint firstItem="WkD-B7-4q8" firstAttribute="top" secondItem="mHh-n0-Vwa" secondAttribute="bottom" constant="544" id="M5s-1f-nyA"/>
+                            <constraint firstItem="mHh-n0-Vwa" firstAttribute="leading" secondItem="lEF-8D-Uv7" secondAttribute="leading" constant="20" id="PTx-xb-5Pr"/>
+                            <constraint firstItem="lEF-8D-Uv7" firstAttribute="bottom" secondItem="WkD-B7-4q8" secondAttribute="bottom" constant="54" id="a81-LP-vKs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="lEF-8D-Uv7"/>
                     </view>
                     <navigationItem key="navigationItem" id="EhX-6x-FJK"/>
