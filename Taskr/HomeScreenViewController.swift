@@ -26,7 +26,7 @@ class groupCell : UITableViewCell{
 }
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-   
+   //noooooo
     var ref: DatabaseReference!
     var groupArray : [Group] = []
     
