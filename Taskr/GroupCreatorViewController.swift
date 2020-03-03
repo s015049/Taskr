@@ -36,7 +36,7 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // please commmit
+    // please commmiT
     
     @IBAction func addGroup(_ sender: UIButton) { // ADD OPTIONAL BINDING!
         let ref: DatabaseReference!  = Database.database().reference()
