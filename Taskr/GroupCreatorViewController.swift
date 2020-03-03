@@ -18,7 +18,7 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
+        
         
         name.delegate = self
         members.delegate = self
@@ -40,15 +40,18 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     // please commmit
     
     @IBAction func addGroup(_ sender: UIButton) { // ADD OPTIONAL BINDING!
+        ref = Database.database().reference()
         // adds group to master list of groups
-        let membersArr = (members.text! + ","+Auth.auth().currentUser!.email!).components(separatedBy: ",")
+        let membersArr: NSArray = (members.text! + ","+Auth.auth().currentUser!.email!).components(separatedBy: ",") as NSArray
         let groups: [String] = [name.text!]
+        print("name.text: \(name.text!)")
         
-        ref.child("groups").child(name.text!).setValue(["tasks": [], "members": membersArr])
+       // ref.child("groups").child(name.text!).setValue(["tasks": [], "members": membersArr])
              
         // adds group to user's list of groups by iterating thourgh all members
         for m in membersArr {
-            ref.child("users").child(m).child("groups").setValue(groups)
+            print(m as! String)
+            ref.child("users").child(m as! String).child("groups").setValue(groups)
         } // end of for-loop
         
         self.dismiss(animated: true, completion: nil)
