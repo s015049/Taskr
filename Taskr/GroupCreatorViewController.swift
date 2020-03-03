@@ -38,7 +38,7 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    // commit engine please see me please 2.2
+    // please commmit
     
     @IBAction func addGroup(_ sender: UIButton) { // ADD OPTIONAL BINDING!
         // adds group to master list of groups
