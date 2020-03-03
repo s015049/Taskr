@@ -26,23 +26,25 @@ class groupCell : UITableViewCell{
 }
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+   
+    var ref: DatabaseReference!
+    var groupArray : [Group] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        ref = Database.database().reference()
         let email = Auth.auth().currentUser!.email!
-        ref.child("users").child(email).child("groups").observeSingleEvent(of: .value) { (snapshot) in
+        ref.child("users").child(email).child("groups").observe(.value) { (snapshot) in
        
-            let value = snapshot.value as? NSArray
-
-           
+            self.groupArray = snapshot.value as? NSArray as! [Group]
          }
+        return groupArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
     
-    var ref: DatabaseReference!
+   
 
     
     override func viewDidLoad() {
