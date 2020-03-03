@@ -18,7 +18,6 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        FirebaseApp.configure()
         ref = Database.database().reference()
         
         name.delegate = self
