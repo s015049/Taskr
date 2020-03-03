@@ -11,7 +11,6 @@ import Firebase
 
 class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     
-    var ref: DatabaseReference!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var members: UITextField!
     @IBOutlet weak var addGroupButtonOutlet: UIButton!
@@ -40,20 +39,23 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     // please commmit
     
     @IBAction func addGroup(_ sender: UIButton) { // ADD OPTIONAL BINDING!
-        ref = Database.database().reference()
+        let ref: DatabaseReference!  = Database.database().reference()
+    
         // adds group to master list of groups
-        let membersArr: NSArray = (members.text! + ","+Auth.auth().currentUser!.email!).components(separatedBy: ",") as NSArray
+        let membersString = "\(Auth.auth().currentUser!.email!),\(members.text!)"
+        let membersArr: NSArray = membersString.components(separatedBy: ",") as NSArray
         let groups: [String] = [name.text!]
-        print("name.text: \(name.text!)")
-        
-       // ref.child("groups").child(name.text!).setValue(["tasks": [], "members": membersArr])
-             
+
+        ref.child("groups").child(name.text!).setValue(["tasks": ["example task"], "members": membersArr])
+
         // adds group to user's list of groups by iterating thourgh all members
+        var i = 1
         for m in membersArr {
-            print(m as! String)
             ref.child("users").child(m as! String).child("groups").setValue(groups)
+            print("add group to \(i) user(s)")
+            i+=1
         } // end of for-loop
-        
+
         self.dismiss(animated: true, completion: nil)
         print("Group \(name.text!) added")
     } // end of addGroup
