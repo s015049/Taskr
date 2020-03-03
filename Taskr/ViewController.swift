@@ -23,7 +23,7 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if let _ = Auth.auth().currentUser{
-            self.performSegue(withIdentifier: "toHomeScreen", sender: self)
+            self.performSegue(withIdentifier: "launchToHomeScreen", sender: self)
         }
     }
 

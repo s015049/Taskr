@@ -82,10 +82,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7Mg-oK-gy9"/>
                     </view>
+                    <connections>
+                        <segue destination="Sqq-r3-Q3T" kind="show" identifier="launchToHomeScreen" id="tsz-6H-vDZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="128.57142857142856"/>
+            <point key="canvasLocation" x="-233" y="62"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="Hvt-q6-0Qg">
@@ -204,11 +207,11 @@
             <objects>
                 <viewController storyboardIdentifier="UIViewController-vnO-FO-oGt" id="vnO-FO-oGt" userLabel="Group View Controller" customClass="GroupCreatorViewController" customModule="Taskr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4uy-eo-UIA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkD-B7-4q8">
-                                <rect key="frame" x="0.0" y="758" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="704" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="414" id="2ns-9S-x3D"/>
@@ -257,7 +260,7 @@
                             <constraint firstItem="WkD-B7-4q8" firstAttribute="leading" secondItem="lEF-8D-Uv7" secondAttribute="leading" id="6zj-sz-jNd"/>
                             <constraint firstItem="WkD-B7-4q8" firstAttribute="trailing" secondItem="lEF-8D-Uv7" secondAttribute="trailing" id="HmP-Xf-At5"/>
                             <constraint firstItem="lEF-8D-Uv7" firstAttribute="trailing" secondItem="mHh-n0-Vwa" secondAttribute="trailing" constant="80" id="Hqx-Sp-57W"/>
-                            <constraint firstItem="WkD-B7-4q8" firstAttribute="top" secondItem="mHh-n0-Vwa" secondAttribute="bottom" constant="544" id="M5s-1f-nyA"/>
+                            <constraint firstItem="WkD-B7-4q8" firstAttribute="top" secondItem="mHh-n0-Vwa" secondAttribute="bottom" constant="490" id="M5s-1f-nyA"/>
                             <constraint firstItem="mHh-n0-Vwa" firstAttribute="leading" secondItem="lEF-8D-Uv7" secondAttribute="leading" constant="20" id="PTx-xb-5Pr"/>
                             <constraint firstItem="lEF-8D-Uv7" firstAttribute="bottom" secondItem="WkD-B7-4q8" secondAttribute="bottom" constant="54" id="a81-LP-vKs"/>
                         </constraints>
@@ -421,11 +424,12 @@
                         <outlet property="emailAddressTextField" destination="KUP-kF-IP2" id="kLE-r7-FQQ"/>
                         <outlet property="logInButtonOutlet" destination="Nkd-j0-KuU" id="zTU-PF-THh"/>
                         <outlet property="passwordTextField" destination="YQo-kb-sin" id="UAx-EW-TqI"/>
+                        <segue destination="Sqq-r3-Q3T" kind="show" identifier="loginToHomeScreen" id="Dsm-La-VZr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dms-Hr-ZYm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="606"/>
+            <point key="canvasLocation" x="871" y="605"/>
         </scene>
         <!--Add Task View Controller-->
         <scene sceneID="zQt-3t-tcl">
@@ -530,11 +534,11 @@
             <objects>
                 <viewController id="Sqq-r3-Q3T" customClass="HomeScreenViewController" customModule="Taskr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i4j-IK-wmD">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mjI-Ht-mot">
-                                <rect key="frame" x="0.0" y="762" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="708" width="414" height="50"/>
                                 <color key="backgroundColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Xji-y3-Vab"/>
@@ -544,9 +548,12 @@
                                 <state key="normal" title="Create New Group +">
                                     <color key="titleColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="vnO-FO-oGt" kind="show" id="vMA-y4-Pag"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dtv-Yt-F8B">
-                                <rect key="frame" x="0.0" y="44" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="708"/>
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="267" id="CIH-mt-TbM" customClass="homeScreenCell" customModule="Taskr">
@@ -628,7 +635,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bna-iG-wIF">
-                                <rect key="frame" x="172" y="822" width="70" height="40"/>
+                                <rect key="frame" x="172" y="768" width="70" height="40"/>
                                 <color key="backgroundColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="EsZ-Ny-Wpj"/>
@@ -672,4 +679,7 @@
     <resources>
         <image name="taskricon" width="827" height="828"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="tsz-6H-vDZ"/>
+    </inferredMetricsTieBreakers>
 </document>

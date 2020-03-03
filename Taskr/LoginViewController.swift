@@ -41,8 +41,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if let _ = user {
-                self.dismiss(animated: true, completion: nil)
                 print("Signed in!")
+                self.performSegue(withIdentifier: "loginToHomeScreen", sender: self)
             }
             else {
                 print(error!.localizedDescription)
