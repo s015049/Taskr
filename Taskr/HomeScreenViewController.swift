@@ -57,7 +57,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             
             )}
         return cell
-    }
+    } 
     
     
     
