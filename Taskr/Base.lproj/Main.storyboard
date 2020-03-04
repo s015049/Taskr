@@ -557,15 +557,15 @@
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="267" id="CIH-mt-TbM" customClass="homeScreenCell" customModule="Taskr">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="267"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeScreen" rowHeight="299" id="CIH-mt-TbM" customClass="homeScreenCell" customModule="Taskr">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="299"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CIH-mt-TbM" id="hez-gC-CLE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="267"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group  Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-q3-e8K">
-                                                    <rect key="frame" x="25" y="11" width="219" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Group  Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-q3-e8K">
+                                                    <rect key="frame" x="20" y="11" width="219" height="48"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
                                                     <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -575,7 +575,7 @@
                                                     <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="sectionIndexBackgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <prototypes>
-                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="208" id="aOq-XV-Ovf" customClass="groupCell" customModule="Taskr" customModuleProvider="target">
+                                                        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="group" rowHeight="208" id="aOq-XV-Ovf" customClass="groupCell" customModule="Taskr" customModuleProvider="target">
                                                             <rect key="frame" x="0.0" y="28" width="414" height="208"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aOq-XV-Ovf" id="JBn-WG-mQx">
@@ -622,7 +622,6 @@
                                             <constraints>
                                                 <constraint firstItem="bXh-aI-ezq" firstAttribute="top" secondItem="hez-gC-CLE" secondAttribute="top" id="A3N-tB-FQD"/>
                                                 <constraint firstAttribute="trailing" secondItem="bXh-aI-ezq" secondAttribute="trailing" id="CMs-y5-AQz"/>
-                                                <constraint firstItem="E1s-q3-e8K" firstAttribute="leading" secondItem="hez-gC-CLE" secondAttribute="leadingMargin" constant="5" id="GKZ-3B-wdc"/>
                                                 <constraint firstItem="bXh-aI-ezq" firstAttribute="leading" secondItem="hez-gC-CLE" secondAttribute="leading" id="IfB-km-EH3"/>
                                                 <constraint firstAttribute="bottom" secondItem="bXh-aI-ezq" secondAttribute="bottom" id="ajv-df-Ta1"/>
                                                 <constraint firstItem="E1s-q3-e8K" firstAttribute="top" secondItem="hez-gC-CLE" secondAttribute="topMargin" id="tqq-uu-Pxm"/>
