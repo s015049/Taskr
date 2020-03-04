@@ -1,10 +1,8 @@
 //
 //  HomeScreenViewController.swift
 //  Taskr
-// suck my dick
 //  Created by Maxwell Serota (student LM) on 2/23/20.
 //  Copyright © 2020 BigBrainCorporation. All rights reserved.
-//kill me
 import FirebaseAuth
 import FirebaseStorage
 import FirebaseDatabase
