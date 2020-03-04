@@ -42,18 +42,16 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
         let ref: DatabaseReference!  = Database.database().reference()
     
         // adds group to master list of groups
-        let membersString = "\(Auth.auth().currentUser!.email!),\(members.text!)"
+        let membersString = "\(members.text!),\(Auth.auth().currentUser!.displayName!)"
         let membersArr: NSArray = membersString.components(separatedBy: ",") as NSArray
         let groups: [String] = [name.text!]
+        let taskArr: NSArray = [Task(description: "do stuff", person: "Billy", dueDate: Date())]
 
-        ref.child("groups").child(name.text!).setValue(["tasks": ["example task"], "members": membersArr])
+        ref.child("groups").child(name.text!).setValue(["tasks": taskArr, "members": membersArr])
 
         // adds group to user's list of groups by iterating thourgh all members
-        var i = 1
         for m in membersArr {
             ref.child("users").child(m as! String).child("groups").setValue(groups)
-            print("add group to \(i) user(s)")
-            i+=1
         } // end of for-loop
 
         self.dismiss(animated: true, completion: nil)
