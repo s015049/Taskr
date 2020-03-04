@@ -564,8 +564,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="299"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Group  Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-q3-e8K">
-                                                    <rect key="frame" x="20" y="11" width="219" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group  Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-q3-e8K">
+                                                    <rect key="frame" x="25" y="11" width="228" height="48"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
                                                     <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -623,6 +623,7 @@
                                                 <constraint firstItem="bXh-aI-ezq" firstAttribute="top" secondItem="hez-gC-CLE" secondAttribute="top" id="A3N-tB-FQD"/>
                                                 <constraint firstAttribute="trailing" secondItem="bXh-aI-ezq" secondAttribute="trailing" id="CMs-y5-AQz"/>
                                                 <constraint firstItem="bXh-aI-ezq" firstAttribute="leading" secondItem="hez-gC-CLE" secondAttribute="leading" id="IfB-km-EH3"/>
+                                                <constraint firstItem="E1s-q3-e8K" firstAttribute="leading" secondItem="hez-gC-CLE" secondAttribute="leadingMargin" constant="5" id="SY6-xc-QN3"/>
                                                 <constraint firstAttribute="bottom" secondItem="bXh-aI-ezq" secondAttribute="bottom" id="ajv-df-Ta1"/>
                                                 <constraint firstItem="E1s-q3-e8K" firstAttribute="top" secondItem="hez-gC-CLE" secondAttribute="topMargin" id="tqq-uu-Pxm"/>
                                             </constraints>
