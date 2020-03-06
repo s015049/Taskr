@@ -43,9 +43,9 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
     
         // adds group to master list of groups
         let membersString = "\(members.text!),\(Auth.auth().currentUser!.displayName!)"
-        let membersArr: NSArray = membersString.components(separatedBy: ",") as NSArray
-        let groups: [String] = [name.text!]
-        let taskArr: NSArray = [Task(description: "do stuff", person: "Billy", dueDate: Date())]
+        let membersArr = membersString.components(separatedBy: ",") as NSArray
+        let groups: NSArray = [name.text!]
+        let taskArr: NSArray = [Task(description: "do stuff", person: "Billy", dueDate: "4/3/20").toString()]
 
         ref.child("groups").child(name.text!).setValue(["tasks": taskArr, "members": membersArr])
 
@@ -56,6 +56,22 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
 
         self.dismiss(animated: true, completion: nil)
         print("Group \(name.text!) added")
+        
+        // reads in current arr of user's groups; this a test of updating
+        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+          // Get user value
+          var value = snapshot.value as! NSArray as AnyObject as! [String]
+          print("value: \(value)")
+          value.append("eh")
+          print("value: \(value)")
+          ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").setValue(value)
+
+          // ...
+          }) { (error) in
+            print(error.localizedDescription)
+        }
+        
+        
     } // end of addGroup
     
 }
