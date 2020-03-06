@@ -21,6 +21,13 @@ class Task{
         self.isCompleted = false
     }
     
+    init(description: String, person: String, dueDate: String, isCompleted: Bool){
+        self.description = description
+        self.person = person
+        self.dueDate = dueDate
+        self.isCompleted = false
+    }
+    
     init() {
         self.description = ""
         self.person = ""
@@ -32,8 +39,9 @@ class Task{
         return "\(description),\(person),\(dueDate),\(isCompleted ? "true" : "false" )"
     }
     
-//    func fromString (s: String) -> Task {
-//        let arr = s.components(separatedBy: ",")
-//    }
+    func fromString (s: String) -> Task {
+        let arr = s.components(separatedBy: ",")
+        return Task (description: arr[0], person: arr[1], dueDate: arr[2], isCompleted: arr[3] == "true" ? true : false)
+    }
 
 }
