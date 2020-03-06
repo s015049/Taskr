@@ -11,10 +11,10 @@ class Task{
 
     var description = ""
     var person = ""
-    var dueDate = Date()
+    var dueDate = ""
     var isCompleted : Bool
 
-    init(description: String, person: String, dueDate: Date){
+    init(description: String, person: String, dueDate: String){
         self.description = description
         self.person = person
         self.dueDate = dueDate
@@ -24,8 +24,16 @@ class Task{
     init() {
         self.description = ""
         self.person = ""
-        self.dueDate = Date()
+        self.dueDate = ""
         self.isCompleted = false
     }
+    
+    func toString() -> String {
+        return "\(description),\(person),\(dueDate),\(isCompleted ? "true" : "false" )"
+    }
+    
+//    func fromString (s: String) -> Task {
+//        let arr = s.components(separatedBy: ",")
+//    }
 
 }
