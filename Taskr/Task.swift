@@ -39,7 +39,7 @@ class Task{
         return "\(description),\(person),\(dueDate),\(isCompleted ? "true" : "false" )"
     }
     
-    func fromString (s: String) -> Task {
+    func fromString (s: String) -> Task { // see me!!
         let arr = s.components(separatedBy: ",")
         return Task (description: arr[0], person: arr[1], dueDate: arr[2], isCompleted: arr[3] == "true" ? true : false)
     }
