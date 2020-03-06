@@ -631,7 +631,7 @@
                                         <connections>
                                             <outlet property="groupNameLabel" destination="E1s-q3-e8K" id="Xye-wm-dfP"/>
                                             <outlet property="taskTableView" destination="bXh-aI-ezq" id="NGY-Zh-VCp"/>
-                                            <segue destination="7fn-WP-GGI" kind="show" id="WD3-08-myn"/>
+                                            <segue destination="7fn-WP-GGI" kind="show" id="XS6-mt-xpH"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
