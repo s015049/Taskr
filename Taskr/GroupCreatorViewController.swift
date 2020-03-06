@@ -60,6 +60,7 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
         // reads in current arr of user's groups; this a test of updating
         ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
           // Get user value
+          // when trying to read from a blacnk database, snapshot.value = NSNull object; use this for optional binding
           var value = snapshot.value as! NSArray as AnyObject as! [String]
           print("value: \(value)")
           value.append("eh")
