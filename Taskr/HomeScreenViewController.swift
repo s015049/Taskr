@@ -9,6 +9,7 @@ import FirebaseDatabase
 import UIKit
 
 class homeScreenCell : UITableViewCell, UITableViewDataSource, UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
@@ -21,6 +22,11 @@ class homeScreenCell : UITableViewCell, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var groupNameLabel : UILabel!
     @IBOutlet weak var taskTableView : UITableView!
     var ref: DatabaseReference! = Database.database().reference()
+    var taskArray : [Task] = []
+    ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            
+    })
     // things
 }
 
@@ -38,24 +44,16 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     var groupArray : [Group] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        ref = Database.database().reference()
-        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observe(.value { (snapshot) in
-            
-            self.groupArray = snapshot.value as? NSArray as! [Group]
-        )}
-        return groupArray.count
+        return 1
+        //return groupArray.count-1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         ref = Database.database().reference()
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeScreen", for: indexPath) as! homeScreenCell
-
-        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observe(.value { (snapshot) in
-            
-            self.groupArray = snapshot.value as? NSArray as! [Group]
-            cell.groupNameLabel? = groupArray[0].name
-            
-            )}
+        cell.groupNameLabel.text = groupArray[indexPath.row].name
+        cell.groupNameLabel.font = UIFont(name: "avenir next demi bold", size: 35)
+        
         return cell
     } 
     
@@ -65,7 +63,16 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-    }
+    ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
+        
+            let value = snapshot.value as? NSDictionary
+        
+            if let gArray = value?["groups"] as? [Group]{
+                self.groupArray = gArray
+            }
+            
+            )}
+        }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
