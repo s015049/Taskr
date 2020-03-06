@@ -23,11 +23,10 @@ class homeScreenCell : UITableViewCell, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var taskTableView : UITableView!
     var ref: DatabaseReference! = Database.database().reference()
     var taskArray : [Task] = []
-    ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
-            let value = snapshot.value as? NSDictionary
+    //ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
+            //let value = snapshot.value as? NSDictionary
             
-    })
-    // things
+   // })
 }
 
 class groupCell : UITableViewCell{
@@ -41,7 +40,7 @@ class groupCell : UITableViewCell{
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     //noooooo
     var ref: DatabaseReference!
-    var groupArray : [Group] = []
+    var groupArray : [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -51,7 +50,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         ref = Database.database().reference()
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeScreen", for: indexPath) as! homeScreenCell
-        cell.groupNameLabel.text = groupArray[indexPath.row].name
+        cell.groupNameLabel.text = groupArray[indexPath.row]
         cell.groupNameLabel.font = UIFont(name: "avenir next demi bold", size: 35)
         
         return cell
@@ -63,15 +62,16 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-    ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
-        
-            let value = snapshot.value as? NSDictionary
-        
-            if let gArray = value?["groups"] as? [Group]{
-                self.groupArray = gArray
-            }
-            
-            )}
+        groupArray = ["Group1", "Group2", "Group3"]
+//    ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
+//
+//            let value = snapshot.value as? NSDictionary
+//
+//            if let gArray = value?["groups"] as? [Group]{
+//                self.groupArray = gArray
+//            }
+//
+//            )}
         }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
