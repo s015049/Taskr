@@ -46,31 +46,35 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
         let membersArr = membersString.components(separatedBy: ",") as NSArray
         let groups: NSArray = [name.text!]
         let taskArr: NSArray = [Task(description: "do stuff", person: "Billy", dueDate: "4/3/20").toString()]
-
-        ref.child("groups").child(name.text!).setValue(["tasks": taskArr, "members": membersArr])
-
-        // adds group to user's list of groups by iterating thourgh all members
-        for m in membersArr {
-            ref.child("users").child(m as! String).child("groups").setValue(groups)
-        } // end of for-loop
-
-        self.dismiss(animated: true, completion: nil)
-        print("Group \(name.text!) added")
         
-        // reads in current arr of user's groups; this a test of updating
-        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
-          // Get user value - see me!!!!
-          // when trying to read from a blacnk database, snapshot.value = NSNull object; use this for optional binding
-          var value = snapshot.value as! NSArray as AnyObject as! [String]
-          print("value: \(value)")
-          value.append("eh")
-          print("value: \(value)")
-          ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").setValue(value)
+        ref.child("groups").child(self.name.text!).setValue(["tasks": taskArr, "members": membersArr])
+        
+        // adds group to members branch
+        for member in membersArr {
+            ref.child("users").child(member as! String).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+                if let _ = snapshot.value as? NSNull { // if user has no prior groups
 
-          // ...
-          }) { (error) in
-            print(error.localizedDescription)
+                    // adds group to user's list of groups by iterating thourgh all members
+                    for m in membersArr {
+                        ref.child("users").child(m as! String).child("groups").setValue(groups)
+                    } // end of for-loop
+
+                    self.dismiss(animated: true, completion: nil)
+                    print("Group \(self.name.text!) added")
+                }
+                else { // if user has prior groups
+                    var value = snapshot.value as! NSArray as AnyObject as! [String]
+                    print("value: \(value)")
+                    value.append("eh")
+                    print("value: \(value)")
+                    ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").setValue(value)
+                }
+
+              }) { (error) in
+                print(error.localizedDescription)
+            } // end of read method
         }
+        
         
         
     } // end of addGroup
