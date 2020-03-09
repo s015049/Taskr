@@ -629,8 +629,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="groupNameLabel" destination="E1s-q3-e8K" id="Xye-wm-dfP"/>
-                                            <outlet property="taskTableView" destination="bXh-aI-ezq" id="NGY-Zh-VCp"/>
+                                            <outlet property="groupNameLabel" destination="E1s-q3-e8K" id="OQm-it-exh"/>
+                                            <outlet property="taskTableView" destination="bXh-aI-ezq" id="udP-cX-O7H"/>
                                             <segue destination="7fn-WP-GGI" kind="show" id="XS6-mt-xpH"/>
                                         </connections>
                                     </tableViewCell>

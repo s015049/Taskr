@@ -8,24 +8,21 @@ import FirebaseDatabase
 import UIKit
 
 class homeScreenCell : UITableViewCell, UITableViewDataSource, UITableViewDelegate{
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! homeScreenCell
+        return cell
+    }
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath)
-        return cell
-    }
-    
-    @IBOutlet weak var groupNameLabel : UILabel!
-    @IBOutlet weak var taskTableView : UITableView!
+    @IBOutlet weak var groupNameLabel: UILabel!
     var ref: DatabaseReference! = Database.database().reference()
-    var taskArray : [Task] = []
-    //ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
-            //let value = snapshot.value as? NSDictionary
-            
-   // })
+    var taskArray : [String] = []
+    @IBOutlet weak var taskTableView: UITableView!
+    
 }
 
 class groupCell : UITableViewCell{
@@ -37,13 +34,11 @@ class groupCell : UITableViewCell{
 }
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    //noooooo
     var ref: DatabaseReference!
     var groupArray : [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-        //return groupArray.count-1
+        return groupArray.count-1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -61,17 +56,14 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference()
-        groupArray = ["Group1", "Group2", "Group3"]
-//    ref.child("users").child(Auth.auth().currentUser!.displayName!).observe(.value { (snapshot) in
-//
-//            let value = snapshot.value as? NSDictionary
-//
-//            if let gArray = value?["groups"] as? [Group]{
-//                self.groupArray = gArray
-//            }
-//
-//            )}
+        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if  var value = snapshot.value as! NSArray as AnyObject as! [String] {
+                self.groupArray = value
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
+    }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
