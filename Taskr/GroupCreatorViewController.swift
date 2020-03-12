@@ -53,27 +53,21 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
         for member in membersArr {
             ref.child("users").child(member as! String).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
                 if let _ = snapshot.value as? NSNull { // if user has no prior groups
-
                     // adds group to user's list of groups by iterating thourgh all members
-                    for m in membersArr {
-                        ref.child("users").child(m as! String).child("groups").setValue(groups)
-                    } // end of for-loop
-
-                    self.dismiss(animated: true, completion: nil)
-                    print("Group \(self.name.text!) added")
+                    ref.child("users").child(member as! String).child("groups").setValue(groups)
                 }
                 else { // if user has prior groups
                     var value = snapshot.value as! NSArray as AnyObject as! [String]
-                    print("value: \(value)")
-                    value.append("eh")
-                    print("value: \(value)")
-                    ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").setValue(value)
+                    value.append(self.name.text!)
+                    ref.child("users").child(member as! String).child("groups").setValue(value)
                 }
 
               }) { (error) in
                 print(error.localizedDescription)
             } // end of read method
         }
+        
+        self.dismiss(animated: true, completion: nil)
         
         
         
