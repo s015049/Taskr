@@ -49,13 +49,18 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
              if let _ = user {
                  let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                  changeRequest?.displayName = userName
-                 changeRequest?.commitChanges(completion: {(error) in print("couldn't change name")})
-                 self.dismiss(animated: true, completion: nil)
+                 changeRequest?.commitChanges(completion: {(error) in print("this is an error but the display name change still works for some reason")})
+                 self.dismiss(animated: true, completion: nil) // end of completion handler
              }
              else {
                  print(error.debugDescription)
              }
          } // end of auth method
+        
+        // more work is needed for this
+        let ref: DatabaseReference!  = Database.database().reference()
+        ref.child("users").child(userName).child("groups").setValue(NSArray(array: ["test"])) // this works because the array has data
+        ref.child("users").child(userName).child("tasks").setValue(NSArray(array: [])) // this doesn't because the array is empty
     }
     
     

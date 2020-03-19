@@ -57,9 +57,10 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         super.viewDidLoad()
         ref = Database.database().reference()
         ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if  var value = snapshot.value as! NSArray as AnyObject as? [String] {
-                self.groupArray = value
-            }
+//              commmented out due to SIGABERT
+//            if var value = snapshot.value as! NSArray as AnyObject as? [String] {
+//                self.groupArray = value
+//            }
         }) { (error) in
             print(error.localizedDescription)
         }

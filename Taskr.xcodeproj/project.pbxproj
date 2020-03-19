@@ -142,8 +142,8 @@
 				2A0954EF23FD63E100A167C1 /* Assets.xcassets */,
 				2A0954F123FD63E100A167C1 /* LaunchScreen.storyboard */,
 				2A0954F423FD63E100A167C1 /* Info.plist */,
-				58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */,
 				585CEBBF2401CEB0000B57DC /* LoginViewController.swift */,
+				58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */,
 				585CEBC12401CEBB000B57DC /* SignUpViewController.swift */,
 				190C4AED240810A90050F3C5 /* addTaskViewController.swift */,
 			);
