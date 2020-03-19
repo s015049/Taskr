@@ -27,7 +27,6 @@ class homeScreenCell : UITableViewCell, UITableViewDataSource, UITableViewDelega
 
 class groupCell : UITableViewCell{
     @IBOutlet weak var taskNameLabel : UILabel!
-    @IBOutlet weak var taskDescriptionLabel : UILabel!
     @IBOutlet weak var isCompleteButton : UIButton!
     var ref: DatabaseReference! = Database.database().reference()
     
