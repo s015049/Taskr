@@ -12,20 +12,23 @@ class Task{
     var description = ""
     var person = ""
     var dueDate = ""
+    var groupName = ""
     var isCompleted : Bool
 
-    init(description: String, person: String, dueDate: String){
+    init(description: String, person: String, dueDate: String, groupName: String){
         self.description = description
         self.person = person
         self.dueDate = dueDate
         self.isCompleted = false
+        self.groupName = groupName
     }
     
-    init(description: String, person: String, dueDate: String, isCompleted: Bool){
+    init(description: String, person: String, dueDate: String, groupName: String, isCompleted: Bool){
         self.description = description
         self.person = person
         self.dueDate = dueDate
-        self.isCompleted = false
+        self.isCompleted = isCompleted
+        self.groupName = groupName
     }
     
     init() {
@@ -33,15 +36,17 @@ class Task{
         self.person = ""
         self.dueDate = ""
         self.isCompleted = false
+        self.groupName = ""
+        
     }
     
     func toString() -> String {
-        return "\(description),\(person),\(dueDate),\(isCompleted ? "true" : "false" )"
+        return "\(description),\(person),\(dueDate),\(groupName),\(isCompleted ? "true" : "false" )"
     }
     
     func fromString (s: String) -> Task {
         let arr = s.components(separatedBy: ",")
-        return Task (description: arr[0], person: arr[1], dueDate: arr[2], isCompleted: arr[3] == "true" ? true : false)
+        return Task (description: arr[0], person: arr[1], dueDate: arr[2], groupName: arr[3], isCompleted: arr[4] == "true" ? true : false)
     }
 
 }
