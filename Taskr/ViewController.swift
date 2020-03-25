@@ -23,7 +23,9 @@ class ViewController: UIViewController {
         super.viewDidAppear(animated)
         
         if let _ = Auth.auth().currentUser{
-            self.performSegue(withIdentifier: "launchToHomeScreen", sender: self)
+            // temporarilt commented out to work on addTask
+            //self.performSegue(withIdentifier: "launchToHomeScreen", sender: self)
+            self.performSegue(withIdentifier: "launchToGroupView", sender: self)
         }
     }
 

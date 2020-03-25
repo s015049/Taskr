@@ -44,7 +44,7 @@ class Task{
         return "\(description),\(person),\(dueDate),\(groupName),\(isCompleted ? "true" : "false" )"
     }
     
-    func fromString (s: String) -> Task {
+    func fromString (s: String) -> Task { // entering multiple group members with , speration will break this
         let arr = s.components(separatedBy: ",")
         return Task (description: arr[0], person: arr[1], dueDate: arr[2], groupName: arr[3], isCompleted: arr[4] == "true" ? true : false)
     }

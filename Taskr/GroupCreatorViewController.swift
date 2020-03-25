@@ -45,9 +45,9 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
         let membersString = "\(members.text!),\(Auth.auth().currentUser!.displayName!)"
         let membersArr = membersString.components(separatedBy: ",") as NSArray
         let groups: NSArray = [name.text!]
-        let taskArr: NSArray = [Task(description: "do stuff", person: "Billy", dueDate: "4/3/20").toString()]
         
-        ref.child("groups").child(self.name.text!).setValue(["tasks": taskArr, "members": membersArr])
+        // adds group to groups branch
+        ref.child("groups").child(self.name.text!).setValue(["members": membersArr])
         
         // adds group to members branch
         for member in membersArr {
@@ -57,9 +57,9 @@ class GroupCreatorViewController: UIViewController, UITextFieldDelegate {
                     ref.child("users").child(member as! String).child("groups").setValue(groups)
                 }
                 else { // if user has prior groups
-                    var value = snapshot.value as! NSArray as AnyObject as! [String]
-                    value.append(self.name.text!)
-                    ref.child("users").child(member as! String).child("groups").setValue(value)
+                    var value = snapshot.value as! NSArray as AnyObject as! [String] // reads in current groups
+                    value.append(self.name.text!) // adds new group to end of groups array
+                    ref.child("users").child(member as! String).child("groups").setValue(value) // uploads updated groups array
                 }
 
               }) { (error) in

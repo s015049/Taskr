@@ -84,6 +84,7 @@
                     </view>
                     <connections>
                         <segue destination="Sqq-r3-Q3T" kind="show" identifier="launchToHomeScreen" id="tsz-6H-vDZ"/>
+                        <segue destination="7fn-WP-GGI" kind="show" identifier="launchToGroupView" id="TJa-sR-C7O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -280,7 +281,7 @@
         <!--Group Creator View Controller-->
         <scene sceneID="IM4-oC-RWc">
             <objects>
-                <viewController storyboardIdentifier="UIViewController-7fn-WP-GGI" id="7fn-WP-GGI" userLabel="Group Creator View Controller" customClass="GroupCreatorViewController" customModule="Taskr" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UIViewController-7fn-WP-GGI" id="7fn-WP-GGI" userLabel="Group Creator View Controller" customClass="GroupViewController" customModule="Taskr" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VZE-QD-isg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -510,16 +511,33 @@
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="name"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name (this is temp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NV-RJ-pCT">
+                                <rect key="frame" x="50" y="380" width="240" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrb-y4-K8c">
+                                <rect key="frame" x="50" y="428" width="314" height="34"/>
+                                <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="name"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="6NV-RJ-pCT" secondAttribute="trailing" constant="124" id="1bP-J6-JEz"/>
                             <constraint firstItem="yBy-db-pg2" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="3zk-2b-5ae"/>
+                            <constraint firstItem="Vrb-y4-K8c" firstAttribute="top" secondItem="6NV-RJ-pCT" secondAttribute="bottom" constant="20" id="Dv1-Um-TEf"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="Gyu-Ze-m4E" secondAttribute="trailing" constant="50" id="Ho5-gX-mwu"/>
                             <constraint firstItem="4P4-Kz-gfw" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="IZf-jY-UV5"/>
                             <constraint firstItem="4P4-Kz-gfw" firstAttribute="top" secondItem="yBy-db-pg2" secondAttribute="bottom" constant="20" id="JZg-e8-Hag"/>
+                            <constraint firstItem="Vrb-y4-K8c" firstAttribute="top" secondItem="6NV-RJ-pCT" secondAttribute="bottom" constant="20" id="Q3V-1V-4wS"/>
                             <constraint firstItem="Gyu-Ze-m4E" firstAttribute="top" secondItem="ENP-Fc-O3P" secondAttribute="bottom" constant="20" id="Qpo-cw-Fge"/>
+                            <constraint firstItem="6NV-RJ-pCT" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="Sa1-Mh-Yk0"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="4P4-Kz-gfw" secondAttribute="trailing" constant="50" id="Ulx-8O-BNz"/>
                             <constraint firstItem="Gyu-Ze-m4E" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="WjS-wR-rFT"/>
                             <constraint firstItem="2Ds-QD-Jnu" firstAttribute="top" secondItem="olE-nZ-gk6" secondAttribute="bottom" constant="20" id="XyO-Pt-emU"/>
@@ -530,10 +548,13 @@
                             <constraint firstItem="Gyu-Ze-m4E" firstAttribute="top" secondItem="ENP-Fc-O3P" secondAttribute="bottom" constant="20" id="gC1-qe-TfC"/>
                             <constraint firstItem="olE-nZ-gk6" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="hPV-Ka-VCa"/>
                             <constraint firstItem="yBy-db-pg2" firstAttribute="top" secondItem="Gyu-Ze-m4E" secondAttribute="bottom" constant="30" id="lrl-ih-6R6"/>
+                            <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="Vrb-y4-K8c" secondAttribute="trailing" constant="50" id="oBD-00-Gvc"/>
                             <constraint firstItem="ENP-Fc-O3P" firstAttribute="top" secondItem="OcD-8l-JDv" secondAttribute="top" constant="50" id="qit-r3-Umi"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="bottom" secondItem="epl-Qf-tbn" secondAttribute="bottom" constant="5" id="s1q-Hm-ozP"/>
                             <constraint firstItem="olE-nZ-gk6" firstAttribute="top" secondItem="4P4-Kz-gfw" secondAttribute="bottom" constant="30" id="tN7-tj-agd"/>
                             <constraint firstItem="ENP-Fc-O3P" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="wbr-Rd-Gfj"/>
+                            <constraint firstItem="Vrb-y4-K8c" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="wct-s4-lpB"/>
+                            <constraint firstItem="6NV-RJ-pCT" firstAttribute="top" secondItem="2Ds-QD-Jnu" secondAttribute="bottom" constant="24" id="x1e-Ck-JtU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="OcD-8l-JDv"/>
                     </view>
@@ -543,6 +564,7 @@
                         <outlet property="assignedToTextField" destination="2Ds-QD-Jnu" id="cbr-o8-nTW"/>
                         <outlet property="descriptionTextField" destination="Gyu-Ze-m4E" id="uik-oe-MJ7"/>
                         <outlet property="dueDateTextField" destination="4P4-Kz-gfw" id="Cb1-Rd-r2Q"/>
+                        <outlet property="groupNameTextField" destination="Vrb-y4-K8c" id="gDe-6w-qoy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyI-aO-t6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
