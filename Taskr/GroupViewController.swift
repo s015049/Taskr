@@ -20,11 +20,15 @@ class groupCell : UITableViewCell{
 
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 1 // this should be # of tasks in group
+        // return tasksArr.size()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! groupCell
+//        cell.taskNameLabel.text = arrOftasks[indexPath.row].name
+//        above is an example of setting the name of a cell to the name of a task
+//        this method is run automatically n times where n = # of tasks in tasks arr
         return cell
     }
     
