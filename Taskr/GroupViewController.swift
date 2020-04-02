@@ -7,8 +7,27 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
+import FirebaseAuth
 
-class GroupViewController: UIViewController {
+class groupCell : UITableViewCell{
+    @IBOutlet weak var taskNameLabel : UILabel!
+    @IBOutlet weak var isCompleteButton : UIButton!
+    var ref: DatabaseReference! = Database.database().reference()
+    
+}
+
+class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! groupCell
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()

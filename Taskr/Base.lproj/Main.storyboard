@@ -316,6 +316,10 @@
                                                 <constraint firstItem="FB6-0a-lMQ" firstAttribute="centerY" secondItem="QKV-cV-5z5" secondAttribute="centerY" id="aGf-s2-17g"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="isCompleteButton" destination="FB6-0a-lMQ" id="gLU-rZ-Zt6"/>
+                                            <outlet property="taskNameLabel" destination="QKV-cV-5z5" id="jaM-hX-0uv"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

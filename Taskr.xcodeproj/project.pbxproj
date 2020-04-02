@@ -136,6 +136,7 @@
 				2A0954E623FD63DC00A167C1 /* AppDelegate.swift */,
 				2A0954E823FD63DC00A167C1 /* SceneDelegate.swift */,
 				2A09A3AA2403470F00E76A58 /* HomeScreenViewController.swift */,
+				58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */,
 				2A0954EA23FD63DC00A167C1 /* ViewController.swift */,
 				2A09A3AC2405574A00E76A58 /* Task.swift */,
 				2A09A3AE2405583E00E76A58 /* Group.swift */,
@@ -146,7 +147,6 @@
 				2A0954F123FD63E100A167C1 /* LaunchScreen.storyboard */,
 				2A0954F423FD63E100A167C1 /* Info.plist */,
 				585CEBBF2401CEB0000B57DC /* LoginViewController.swift */,
-				58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */,
 				585CEBC12401CEBB000B57DC /* SignUpViewController.swift */,
 				190C4AED240810A90050F3C5 /* addTaskViewController.swift */,
 			);
