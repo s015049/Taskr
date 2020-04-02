@@ -20,12 +20,12 @@ class groupCell : UITableViewCell{
 
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! groupCell
-        return cell
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! groupCell
+        return cell
     }
     
 
