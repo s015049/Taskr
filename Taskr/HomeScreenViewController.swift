@@ -7,22 +7,8 @@ import FirebaseStorage
 import FirebaseDatabase
 import UIKit
 
-class homeScreenCell : UITableViewCell, UITableViewDataSource, UITableViewDelegate{
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! homeScreenCell
-        return cell
-    }
-    
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
-    
+class homeScreenCell : UITableViewCell{
     @IBOutlet weak var groupNameLabel: UILabel!
-    var ref: DatabaseReference! = Database.database().reference()
-    var taskArray : [String] = []
-    @IBOutlet weak var taskTableView: UITableView!
-    
 }
 
 
@@ -39,8 +25,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         ref = Database.database().reference()
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeScreen", for: indexPath) as! homeScreenCell
         cell.groupNameLabel.text = groupArray[indexPath.row]
-        cell.groupNameLabel.font = UIFont(name: "avenir next demi bold", size: 35)
-        
         return cell
     } 
     
