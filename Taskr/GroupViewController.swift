@@ -71,9 +71,9 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.dueDateLabel.text = task.dueDate
         cell.descriptionLabel.text = task.description
         var members : String = task.member
-        for var i in members{
-            if i == "/"{
-                i = ", "
+        for var i in range 0...members.count-1{
+            if members[i] == "/"{
+                members[i] = ", "
             }
         }
         cell.memberLabel.text = members
