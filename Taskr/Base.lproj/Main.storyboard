@@ -224,6 +224,7 @@
                                 </state>
                                 <connections>
                                     <action selector="addGroup:" destination="vnO-FO-oGt" eventType="touchUpInside" id="Dai-Ug-zIs"/>
+                                    <segue destination="Sqq-r3-Q3T" kind="show" identifier="newGroupToHomeScreen" id="q6U-3c-zxl"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dPm-Tz-fx5">
@@ -594,7 +595,7 @@
                                     <color key="titleColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vnO-FO-oGt" kind="show" id="vMA-y4-Pag"/>
+                                    <action selector="clickedNewGroup:" destination="Sqq-r3-Q3T" eventType="touchUpInside" id="F78-bS-5oi"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bna-iG-wIF">
@@ -669,6 +670,9 @@
                         <viewLayoutGuide key="safeArea" id="Nqn-CP-ehQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Brl-2A-xHL"/>
+                    <connections>
+                        <segue destination="vnO-FO-oGt" kind="show" identifier="homeScreenToNewGroup" id="pUg-KF-Pxm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ysE-78-oaI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -679,7 +683,8 @@
         <image name="taskricon" width="827" height="828"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Dsm-La-VZr"/>
+        <segue reference="pUg-KF-Pxm"/>
+        <segue reference="q6U-3c-zxl"/>
         <segue reference="GED-fD-Pro"/>
     </inferredMetricsTieBreakers>
 </document>
