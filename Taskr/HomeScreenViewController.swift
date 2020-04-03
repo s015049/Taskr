@@ -9,53 +9,21 @@ import UIKit
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var groupsArray : [String]?
-//    @IBOutlet weak var tableView: UITableView! {
-//        didSet {
-//            self.tableView.delegate = self
-//            self.tableView.dataSource = self
-//        }
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        // sets groupsArray to all of user's groups
-//        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
-//            if let _ = snapshot.value as? NSNull { // if user has no prior groups
-//                self.groupsArray = []
-//            }
-//            else { // if user has prior groups
-//                self.groupsArray = snapshot.value as! NSArray as AnyObject as! [String] // reads in current groups
-//            }
-//          }) { (error) in
-//            print(error.localizedDescription)
-//        } // end of read method
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let ref: DatabaseReference! = Database.database().reference()
-        print("hey, vSauce, Michael here")
-        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
-            if let _ = snapshot.value as? NSNull { // if user has no prior groups
-                self.groupsArray = []
-            }
-            else { // if user has prior groups
-                self.groupsArray = snapshot.value as! NSArray as AnyObject as! [String] // reads in current groups
-                print("prior groups exist")
-                for s in self.groupsArray! {
-                    print("item in groupsArray: \(s)")
-                }
-            }
-          }) {
-            (error) in
-            print(error.localizedDescription)
-        } // end of read method
-
-        // maybe should have -1
-//        dump(groupsArray)
-//        print("groupsArray.count: \(groupsArray!.count)")
-//        return groupsArray!.count
-        return 1
+        getGroups()
+        do { // will print true or false
+            self.groupsArray = try JSONSerialization.readJSON(withFilename: "data") as! [String]
+            return groupsArray!.count
+        }
+        catch {
+            print("Failed to return size of groups array")
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -76,6 +44,33 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
+    func getGroups (){
+        let ref: DatabaseReference! = Database.database().reference()
+        print("hey, vSauce, Michael here")
+    ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+            if let _ = snapshot.value as? NSNull { // if user has no prior groups
+                do { // will print true or false
+                    try print(JSONSerialization.writeJSON(jsonObject: [] as! [String], toFilename: "data"))
+                }
+                catch {
+                    print("Failed to write blank groups array")
+                }
+            }
+            else { // if user has prior groups
+                do { // will print true or false
+                     try print(JSONSerialization.writeJSON(jsonObject: snapshot.value as! NSArray as AnyObject as! [String], toFilename: "data"))
+                 }
+                 catch {
+                     print("Failed to write filled groups array")
+                 }
+            }
+              }) {
+                (error) in
+                print(error.localizedDescription)
+            } // end of read method
+    }
+        
+    
     @IBAction func logOutButtonPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -91,5 +86,35 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
 
 class homeScreenCell : UITableViewCell{
     @IBOutlet weak var groupNameLabel: UILabel!
+}
+
+extension JSONSerialization {
+    
+    static func readJSON(withFilename filename: String) throws -> Any? {
+        let fm = FileManager.default
+        let urls = fm.urls(for: .documentDirectory, in: .userDomainMask)
+        if let url = urls.first {
+            var fileURL = url.appendingPathComponent(filename)
+            fileURL = fileURL.appendingPathExtension("json")
+            let data = try Data(contentsOf: fileURL)
+            let jsonObject = try JSONSerialization.jsonObject(with: data, options: [.mutableContainers, .mutableLeaves])
+            return jsonObject
+        }
+        return nil
+    }
+    
+    static func writeJSON(jsonObject: Any, toFilename filename: String) throws -> Bool{
+        let fm = FileManager.default
+        let urls = fm.urls(for: .documentDirectory, in: .userDomainMask)
+        if let url = urls.first {
+            var fileURL = url.appendingPathComponent(filename)
+            fileURL = fileURL.appendingPathExtension("json")
+            let data = try JSONSerialization.data(withJSONObject: jsonObject, options: [.prettyPrinted])
+            try data.write(to: fileURL, options: [.atomicWrite])
+            return true
+        }
+        
+        return false
+    }
 }
 

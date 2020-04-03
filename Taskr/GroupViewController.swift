@@ -11,14 +11,12 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class groupCell : UITableViewCell{
-    @IBOutlet weak var taskNameLabel : UILabel!
-    @IBOutlet weak var isCompleteButton : UIButton!
-    var ref: DatabaseReference! = Database.database().reference()
-    
-}
-
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1 // this should be # of tasks in group
         // return tasksArr.size()
@@ -31,23 +29,10 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
 //        this method is run automatically n times where n = # of tasks in tasks arr
         return cell
     }
+}
+
+class groupCell : UITableViewCell{
+    @IBOutlet weak var taskNameLabel : UILabel!
+    @IBOutlet weak var isCompleteButton : UIButton!
     
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

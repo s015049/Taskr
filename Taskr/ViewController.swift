@@ -24,8 +24,8 @@ class ViewController: UIViewController {
         
         if let _ = Auth.auth().currentUser{
             // temporarilt commented out to work on addTask
-            //self.performSegue(withIdentifier: "launchToHomeScreen", sender: self)
-            self.performSegue(withIdentifier: "launchToGroupView", sender: self)
+            self.performSegue(withIdentifier: "launchToHomeScreen", sender: self)
+            //self.performSegue(withIdentifier: "launchToGroupView", sender: self)
         }
     }
 

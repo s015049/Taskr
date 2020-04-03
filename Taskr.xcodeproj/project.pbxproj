@@ -24,6 +24,7 @@
 		585CEBC22401CEBB000B57DC /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585CEBC12401CEBB000B57DC /* SignUpViewController.swift */; };
 		588364BA242BE95B007BC6D2 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588364B9242BE95B007BC6D2 /* GroupViewController.swift */; };
 		58D83F1B2400275C00CA3A70 /* GroupCreatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */; };
+		58F099CA24378CF2002DCAD6 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 58F099C924378CF2002DCAD6 /* data.json */; };
 		B87D1BF1F4CA91D88854E905 /* Pods_Taskr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51EFEB4014F4EB6B8176FDE8 /* Pods_Taskr.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		585CEBC12401CEBB000B57DC /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		588364B9242BE95B007BC6D2 /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreatorViewController.swift; sourceTree = "<group>"; };
+		58F099C924378CF2002DCAD6 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		8B597A8A207ABE12266181DE /* Pods-Taskr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Taskr.debug.xcconfig"; path = "Target Support Files/Pods-Taskr/Pods-Taskr.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,6 +138,7 @@
 				2A0954E623FD63DC00A167C1 /* AppDelegate.swift */,
 				2A0954E823FD63DC00A167C1 /* SceneDelegate.swift */,
 				2A09A3AA2403470F00E76A58 /* HomeScreenViewController.swift */,
+				58F099C924378CF2002DCAD6 /* data.json */,
 				58D83F1A2400275C00CA3A70 /* GroupCreatorViewController.swift */,
 				2A0954EA23FD63DC00A167C1 /* ViewController.swift */,
 				2A09A3AC2405574A00E76A58 /* Task.swift */,
@@ -288,6 +291,7 @@
 				2A0954F323FD63E100A167C1 /* LaunchScreen.storyboard in Resources */,
 				2AF5BEC82401C4C50048FAD7 /* GoogleService-Info.plist in Resources */,
 				2A0954F023FD63E100A167C1 /* Assets.xcassets in Resources */,
+				58F099CA24378CF2002DCAD6 /* data.json in Resources */,
 				2A0954EE23FD63DC00A167C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
