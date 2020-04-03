@@ -12,7 +12,9 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var groupName : String = ""
    var homeScreenViewController : HomeScreenViewController = HomeScreenViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -22,8 +24,34 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1 // this should be # of tasks in group
-        // return tasksArr.size()
+        return 1
+    }
+    
+    func getTasks(){
+        let ref: DatabaseReference! = Database.database().reference()
+        ref.child("groups").child(groupName).child("tasks").observeSingleEvent(of: .value, with: { (snapshot) in
+        if let _ = snapshot.value as? NSNull { // if user has no prior groups
+            do { // will print true or false
+                print("no prior taks")
+                try print(JSONSerialization.writeJSON(jsonObject: [] as! [String], toFilename: "tasks"))
+            }
+            catch {
+                print("Failed to write blank groups array")
+            }
+        }
+        else { // if user has prior groups
+            do { // will print true or false
+                print("yes prior groups")
+                try print(JSONSerialization.writeJSON(jsonObject: snapshot.value as! NSArray as AnyObject as! [String], toFilename: "tasks"))
+             }
+             catch {
+                 print("Failed to write filled groups array")
+             }
+        }
+          }) {
+            (error) in
+            print(error.localizedDescription)
+        } // end of read method
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

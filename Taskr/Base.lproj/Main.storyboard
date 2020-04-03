@@ -645,7 +645,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="groupNameLabel" destination="E1s-q3-e8K" id="OQm-it-exh"/>
-                                            <segue destination="7fn-WP-GGI" kind="show" identifier="homeScreentoGroupView" id="GED-fD-Pro"/>
+                                            <segue destination="7fn-WP-GGI" kind="show" id="oXT-x6-mme"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -683,7 +683,8 @@
         <image name="taskricon" width="827" height="828"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="pUg-KF-Pxm"/>
         <segue reference="q6U-3c-zxl"/>
-        <segue reference="GED-fD-Pro"/>
+        <segue reference="oXT-x6-mme"/>
     </inferredMetricsTieBreakers>
 </document>

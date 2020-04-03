@@ -9,12 +9,14 @@ import UIKit
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var groupTableView: UITableView!
+    var groupName = ""
     var groupsArray : [String]?
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
         getGroups()
     }
+    
     
     
     @IBAction func clickedNewGroup(_ sender: Any) {
@@ -24,7 +26,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         print("tableView 1")
         do { // will print true or false
-            self.groupsArray = try JSONSerialization.readJSON(withFilename: "data") as! [String]
+            self.groupsArray = try JSONSerialization.readJSON(withFilename: "groups") as! [String]
             return groupsArray!.count
         }
         catch {
@@ -44,10 +46,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let cell = sender as? homeScreenCell {
             if let groupViewController = segue.destination as? GroupViewController {
-                // add database read function
-                // webViewController.url = cell.url this line is from the JSON project
-                // groupViewController.name = cell.groupNameLabel.text
-                // groupViewController.tasks = array fo tasks from database
+                groupViewController.groupName = cell.groupNameLabel.text!
             }
         }
     }
@@ -59,7 +58,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             if let _ = snapshot.value as? NSNull { // if user has no prior groups
                 do { // will print true or false
                     print("no prior groups")
-                    try print(JSONSerialization.writeJSON(jsonObject: [] as! [String], toFilename: "data"))
+                    try print(JSONSerialization.writeJSON(jsonObject: [] as! [String], toFilename: "groups"))
                 }
                 catch {
                     print("Failed to write blank groups array")
@@ -68,7 +67,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             else { // if user has prior groups
                 do { // will print true or false
                     print("yes prior groups")
-                    try print(JSONSerialization.writeJSON(jsonObject: snapshot.value as! NSArray as AnyObject as! [String], toFilename: "data"))
+                    try print(JSONSerialization.writeJSON(jsonObject: snapshot.value as! NSArray as AnyObject as! [String], toFilename: "groups"))
                  }
                  catch {
                      print("Failed to write filled groups array")
