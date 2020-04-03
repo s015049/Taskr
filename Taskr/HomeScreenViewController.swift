@@ -14,15 +14,28 @@ class homeScreenCell : UITableViewCell{
 
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var ref: DatabaseReference!
-    var groupArray : [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var groupArray : [String] = []
+        var ref = Database.database().reference()
+        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+         if var value = snapshot.value as! NSArray as AnyObject as? [String] {
+               groupArray = value            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         return groupArray.count-1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        ref = Database.database().reference()
+        var groupArray : [String] = []
+        var ref = Database.database().reference()
+        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+         if var value = snapshot.value as! NSArray as AnyObject as? [String] {
+               groupArray = value            }
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeScreen", for: indexPath) as! homeScreenCell
         cell.groupNameLabel.text = groupArray[indexPath.row]
         return cell
@@ -44,15 +57,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ref = Database.database().reference()
-        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
-//              commmented out due to SIGABERT
-//            if var value = snapshot.value as! NSArray as AnyObject as? [String] {
-//                self.groupArray = value
-//            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
     }
     
     @IBAction func logOutButtonPressed(_ sender: Any) {
