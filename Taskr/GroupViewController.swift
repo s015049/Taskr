@@ -70,7 +70,13 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         var task: Task = Task(); task = task.fromString(s: tasksArr[indexPath.row])
         cell.dueDateLabel.text = task.dueDate
         cell.descriptionLabel.text = task.description
-        cell.memberLabel.text = task.member
+        var members : String = task.member
+        for var i in members{
+            if i == "/"{
+                i = ", "
+            }
+        }
+        cell.memberLabel.text = members
         cell.taskNameLabel.text = task.taskName
         //cell.isCompleteButton.state = // not sure how this should work
         return cell
