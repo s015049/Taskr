@@ -84,7 +84,6 @@
                     </view>
                     <connections>
                         <segue destination="Sqq-r3-Q3T" kind="show" identifier="launchToHomeScreen" id="tsz-6H-vDZ"/>
-                        <segue destination="7fn-WP-GGI" kind="show" identifier="launchToGroupView" id="TJa-sR-C7O"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -299,7 +298,7 @@
                                     <color key="titleColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UEl-Ae-trF" kind="show" identifier="homeScreenCellToGroupView" id="3hV-5P-mjV"/>
+                                    <segue destination="UEl-Ae-trF" kind="show" identifier="groupViewtoAddTask" id="3hV-5P-mjV"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hg2-LY-XnX">
@@ -624,29 +623,29 @@
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeScreen" rowHeight="82" id="CIH-mt-TbM" customClass="homeScreenCell" customModule="Taskr">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="82"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeScreen" rowHeight="90" id="CIH-mt-TbM" customClass="homeScreenCell" customModule="Taskr">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="90"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CIH-mt-TbM" id="hez-gC-CLE">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group  Name " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1s-q3-e8K">
-                                                    <rect key="frame" x="25" y="11" width="228" height="48"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="35"/>
+                                                    <rect key="frame" x="109.5" y="24.5" width="195" height="41"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="30"/>
                                                     <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
-                                                <constraint firstItem="E1s-q3-e8K" firstAttribute="leading" secondItem="hez-gC-CLE" secondAttribute="leadingMargin" constant="5" id="SY6-xc-QN3"/>
-                                                <constraint firstItem="E1s-q3-e8K" firstAttribute="top" secondItem="hez-gC-CLE" secondAttribute="topMargin" id="tqq-uu-Pxm"/>
+                                                <constraint firstItem="E1s-q3-e8K" firstAttribute="centerX" secondItem="hez-gC-CLE" secondAttribute="centerX" id="I7r-Ex-cqX"/>
+                                                <constraint firstItem="E1s-q3-e8K" firstAttribute="centerY" secondItem="hez-gC-CLE" secondAttribute="centerY" id="ss1-cz-jgY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="groupNameLabel" destination="E1s-q3-e8K" id="OQm-it-exh"/>
-                                            <segue destination="7fn-WP-GGI" kind="show" id="GED-fD-Pro"/>
+                                            <segue destination="7fn-WP-GGI" kind="show" identifier="homeScreentoGroupView" id="GED-fD-Pro"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -671,6 +670,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Brl-2A-xHL"/>
                     <connections>
+                        <outlet property="groupTableView" destination="dtv-Yt-F8B" id="We3-BA-v6o"/>
                         <segue destination="vnO-FO-oGt" kind="show" identifier="homeScreenToNewGroup" id="pUg-KF-Pxm"/>
                     </connections>
                 </viewController>
@@ -683,7 +683,6 @@
         <image name="taskricon" width="827" height="828"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pUg-KF-Pxm"/>
         <segue reference="q6U-3c-zxl"/>
         <segue reference="GED-fD-Pro"/>
     </inferredMetricsTieBreakers>

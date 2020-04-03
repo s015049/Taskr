@@ -8,15 +8,16 @@ import FirebaseDatabase
 import UIKit
 
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var groupTableView: UITableView!
     var groupsArray : [String]?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
         getGroups()
     }
+    
+    
     @IBAction func clickedNewGroup(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
         self.performSegue(withIdentifier: "homeScreenToNewGroup", sender: self)
     }
     
@@ -45,7 +46,7 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
             if let groupViewController = segue.destination as? GroupViewController {
                 // add database read function
                 // webViewController.url = cell.url this line is from the JSON project
-                // groupViewController.name = name of group
+                // groupViewController.name = cell.groupNameLabel.text
                 // groupViewController.tasks = array fo tasks from database
             }
         }

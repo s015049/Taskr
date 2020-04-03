@@ -12,9 +12,13 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
+   var homeScreenViewController : HomeScreenViewController = HomeScreenViewController()
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        homeScreenViewController.groupTableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
