@@ -12,10 +12,12 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var groupNameLabel: UILabel!
     var groupName : String = ""
    var homeScreenViewController : HomeScreenViewController = HomeScreenViewController()
     
     override func viewDidLoad() {
+        groupNameLabel.text! = groupName
         super.viewDidLoad()
     }
     
@@ -64,6 +66,9 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
 }
 
 class groupCell : UITableViewCell{
+    @IBOutlet weak var dueDateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var memberLabel: UILabel!
     @IBOutlet weak var taskNameLabel : UILabel!
     @IBOutlet weak var isCompleteButton : UIButton!
     
