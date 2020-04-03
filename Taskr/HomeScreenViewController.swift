@@ -7,37 +7,61 @@ import FirebaseStorage
 import FirebaseDatabase
 import UIKit
 
-class homeScreenCell : UITableViewCell{
-    @IBOutlet weak var groupNameLabel: UILabel!
-}
-
-
-
 class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    var groupsArray : [String]?
+//    @IBOutlet weak var tableView: UITableView! {
+//        didSet {
+//            self.tableView.delegate = self
+//            self.tableView.dataSource = self
+//        }
+//    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        // sets groupsArray to all of user's groups
+//        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
+//            if let _ = snapshot.value as? NSNull { // if user has no prior groups
+//                self.groupsArray = []
+//            }
+//            else { // if user has prior groups
+//                self.groupsArray = snapshot.value as! NSArray as AnyObject as! [String] // reads in current groups
+//            }
+//          }) { (error) in
+//            print(error.localizedDescription)
+//        } // end of read method
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var groupArray : [String] = []
-        var ref = Database.database().reference()
+        let ref: DatabaseReference! = Database.database().reference()
+        print("hey, vSauce, Michael here")
         ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
-         if var value = snapshot.value as! NSArray as AnyObject as? [String] {
-               groupArray = value            }
-        }) { (error) in
+            if let _ = snapshot.value as? NSNull { // if user has no prior groups
+                self.groupsArray = []
+            }
+            else { // if user has prior groups
+                self.groupsArray = snapshot.value as! NSArray as AnyObject as! [String] // reads in current groups
+                print("prior groups exist")
+                for s in self.groupsArray! {
+                    print("item in groupsArray: \(s)")
+                }
+            }
+          }) {
+            (error) in
             print(error.localizedDescription)
-        }
-        return groupArray.count-1
+        } // end of read method
+
+        // maybe should have -1
+//        dump(groupsArray)
+//        print("groupsArray.count: \(groupsArray!.count)")
+//        return groupsArray!.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var groupArray : [String] = []
-        var ref = Database.database().reference()
-        ref.child("users").child(Auth.auth().currentUser!.displayName!).child("groups").observeSingleEvent(of: .value, with: { (snapshot) in
-         if var value = snapshot.value as! NSArray as AnyObject as? [String] {
-               groupArray = value            }
-        }) { (error) in
-            print(error.localizedDescription)
-        }
         let cell = tableView.dequeueReusableCell(withIdentifier: "homeScreen", for: indexPath) as! homeScreenCell
-        cell.groupNameLabel.text = groupArray[indexPath.row]
+        cell.groupNameLabel.text = groupsArray![indexPath.row]
+        print("groupsArray at indexPath.row: \(groupsArray![indexPath.row])")
         return cell
     }
     
@@ -52,13 +76,6 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     @IBAction func logOutButtonPressed(_ sender: Any) {
         let firebaseAuth = Auth.auth()
         do {
@@ -70,8 +87,9 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
         }
         
     }
-    
-    
-    
-    
 }
+
+class homeScreenCell : UITableViewCell{
+    @IBOutlet weak var groupNameLabel: UILabel!
+}
+
