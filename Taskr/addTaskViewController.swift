@@ -10,6 +10,8 @@ import Firebase
 
 class addTaskViewController: UIViewController, UITextFieldDelegate {
     
+    
+    @IBOutlet weak var taskNameTextField: UITextField!
     @IBOutlet weak var addTaskButton: UIButton!
     @IBOutlet weak var descriptionTextField: UITextField!
     @IBOutlet weak var dueDateTextField: UITextField!
@@ -21,16 +23,21 @@ class addTaskViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        taskNameTextField.delegate = self
         descriptionTextField.delegate = self
         dueDateTextField.delegate = self
         assignedToTextField.delegate = self
-        descriptionTextField.becomeFirstResponder()
         groupNameTextField.delegate = self
         addTaskButton.isEnabled = false
+        
+        taskNameTextField.becomeFirstResponder()
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if descriptionTextField.isFirstResponder {
+        if taskNameTextField.isFirstResponder {
+            descriptionTextField.becomeFirstResponder()
+        }
+        else if descriptionTextField.isFirstResponder {
             dueDateTextField.becomeFirstResponder()
         }
         else if dueDateTextField.isFirstResponder {
@@ -55,7 +62,8 @@ class addTaskViewController: UIViewController, UITextFieldDelegate {
         let assignedToString = assignedToTextField.text! // list of all those to whom the task is assigned
         let assignedToArray = assignedToTextField.text!.components(separatedBy: ",") as NSArray
         let groupName = groupNameTextField.text!
-        let newTask = Task(description: description, person: assignedToString, dueDate: dueDate, groupName: groupName).toString()
+        let taskName = taskNameTextField.text!
+        let newTask = Task(description: description, person: assignedToString, dueDate: dueDate, groupName: groupName, taskName: taskName).toString()
         
         // adds task to groups branch
         ref.child("groups").child(groupName).child("tasks").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -71,6 +79,7 @@ class addTaskViewController: UIViewController, UITextFieldDelegate {
 
         }) { (error) in
             print(error.localizedDescription)
+            print("ERROR ADDING TASK TO GROUPS BRANCH")
         } // end of read method
         
         // adds task to users branch
@@ -88,8 +97,9 @@ class addTaskViewController: UIViewController, UITextFieldDelegate {
 
             }) { (error) in
                 print(error.localizedDescription)
+                print("ERROR ADDING TASK TO USERS BRANCH")
             } // end of read method
         } // end of for-loop
-        
+        self.dismiss(animated: true, completion: nil)
     }
 }

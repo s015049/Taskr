@@ -14,19 +14,28 @@ import FirebaseAuth
 class GroupViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var groupNameLabel: UILabel!
     var groupName : String = ""
-   var homeScreenViewController : HomeScreenViewController = HomeScreenViewController()
+    var tasksArr : [String] = []
+    var homeScreenViewController : HomeScreenViewController = HomeScreenViewController()
     
     override func viewDidLoad() {
         groupNameLabel.text! = groupName
         super.viewDidLoad()
     }
     
-      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        homeScreenViewController.groupTableView.reloadData()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //homeScreenViewController.groupTableView.reloadData()
+        // above causes SIGABERT
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        do { // will print true or false
+            self.tasksArr = try JSONSerialization.readJSON(withFilename: "tasks") as! [String]
+            return tasksArr.count
+        }
+        catch {
+            print("Failed to return size of tasks array")
+            return 0
+        }
     }
     
     func getTasks(){
@@ -43,7 +52,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         }
         else { // if user has prior groups
             do { // will print true or false
-                print("yes prior groups")
+                print("yes prior tasks")
                 try print(JSONSerialization.writeJSON(jsonObject: snapshot.value as! NSArray as AnyObject as! [String], toFilename: "tasks"))
              }
              catch {
@@ -58,9 +67,12 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "group", for: indexPath) as! groupCell
-//        cell.taskNameLabel.text = arrOftasks[indexPath.row].name
-//        above is an example of setting the name of a cell to the name of a task
-//        this method is run automatically n times where n = # of tasks in tasks arr
+        var task: Task = Task(); task = task.fromString(s: tasksArr[indexPath.row])
+        cell.dueDateLabel.text = task.dueDate
+        cell.descriptionLabel.text = task.description
+        cell.memberLabel.text = task.member
+        cell.taskNameLabel.text = task.taskName
+        //cell.isCompleteButton.state = // not sure how this should work
         return cell
     }
 }

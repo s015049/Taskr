@@ -518,81 +518,98 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENP-Fc-O3P">
-                                <rect key="frame" x="50" y="50" width="112" height="28"/>
+                                <rect key="frame" x="50" y="135" width="112" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gyu-Ze-m4E">
-                                <rect key="frame" x="50" y="98" width="314" height="34"/>
+                                <rect key="frame" x="50" y="183" width="314" height="34"/>
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due date (dd/mm/yyyy):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBy-db-pg2">
-                                <rect key="frame" x="50" y="162" width="222" height="28"/>
+                                <rect key="frame" x="50" y="247" width="222" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4P4-Kz-gfw">
-                                <rect key="frame" x="50" y="210" width="314" height="34"/>
+                                <rect key="frame" x="50" y="295" width="314" height="34"/>
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assigned to (member 1,member 2):" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olE-nZ-gk6">
-                                <rect key="frame" x="50" y="274" width="327" height="28"/>
+                                <rect key="frame" x="50" y="359" width="327" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ds-QD-Jnu">
-                                <rect key="frame" x="50" y="322" width="314" height="34"/>
+                                <rect key="frame" x="50" y="407" width="314" height="34"/>
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="name"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name (this is temp)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NV-RJ-pCT">
-                                <rect key="frame" x="50" y="380" width="240" height="28"/>
+                                <rect key="frame" x="50" y="465" width="240" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Vrb-y4-K8c">
-                                <rect key="frame" x="50" y="428" width="314" height="34"/>
+                                <rect key="frame" x="50" y="513" width="314" height="34"/>
                                 <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="name"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JmX-dz-eDA">
+                                <rect key="frame" x="50" y="25" width="106" height="28"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W0R-b1-Tl6">
+                                <rect key="frame" x="50" y="73" width="314" height="34"/>
+                                <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="0.82031625509999995" green="0.47939550879999998" blue="0.32996761800000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="6NV-RJ-pCT" secondAttribute="trailing" constant="124" id="1bP-J6-JEz"/>
+                            <constraint firstItem="W0R-b1-Tl6" firstAttribute="top" secondItem="JmX-dz-eDA" secondAttribute="bottom" constant="20" id="3FC-aS-0dw"/>
                             <constraint firstItem="yBy-db-pg2" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="3zk-2b-5ae"/>
                             <constraint firstItem="Vrb-y4-K8c" firstAttribute="top" secondItem="6NV-RJ-pCT" secondAttribute="bottom" constant="20" id="Dv1-Um-TEf"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="Gyu-Ze-m4E" secondAttribute="trailing" constant="50" id="Ho5-gX-mwu"/>
                             <constraint firstItem="4P4-Kz-gfw" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="IZf-jY-UV5"/>
                             <constraint firstItem="4P4-Kz-gfw" firstAttribute="top" secondItem="yBy-db-pg2" secondAttribute="bottom" constant="20" id="JZg-e8-Hag"/>
-                            <constraint firstItem="Vrb-y4-K8c" firstAttribute="top" secondItem="6NV-RJ-pCT" secondAttribute="bottom" constant="20" id="Q3V-1V-4wS"/>
                             <constraint firstItem="Gyu-Ze-m4E" firstAttribute="top" secondItem="ENP-Fc-O3P" secondAttribute="bottom" constant="20" id="Qpo-cw-Fge"/>
+                            <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="W0R-b1-Tl6" secondAttribute="trailing" constant="50" id="R07-pY-1Eg"/>
+                            <constraint firstItem="JmX-dz-eDA" firstAttribute="top" secondItem="OcD-8l-JDv" secondAttribute="top" constant="25" id="RK7-Wo-qFF"/>
                             <constraint firstItem="6NV-RJ-pCT" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="Sa1-Mh-Yk0"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="4P4-Kz-gfw" secondAttribute="trailing" constant="50" id="Ulx-8O-BNz"/>
                             <constraint firstItem="Gyu-Ze-m4E" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="WjS-wR-rFT"/>
+                            <constraint firstItem="W0R-b1-Tl6" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="XIl-W6-hBF"/>
                             <constraint firstItem="2Ds-QD-Jnu" firstAttribute="top" secondItem="olE-nZ-gk6" secondAttribute="bottom" constant="20" id="XyO-Pt-emU"/>
                             <constraint firstAttribute="trailing" secondItem="epl-Qf-tbn" secondAttribute="trailing" id="aGM-b0-QRa"/>
+                            <constraint firstItem="JmX-dz-eDA" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="alE-3U-SRe"/>
                             <constraint firstItem="epl-Qf-tbn" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" id="e1T-DV-FZA"/>
                             <constraint firstItem="2Ds-QD-Jnu" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="eje-0G-Iv0"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="2Ds-QD-Jnu" secondAttribute="trailing" constant="50" id="f6V-Lm-qMQ"/>
-                            <constraint firstItem="Gyu-Ze-m4E" firstAttribute="top" secondItem="ENP-Fc-O3P" secondAttribute="bottom" constant="20" id="gC1-qe-TfC"/>
+                            <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="JmX-dz-eDA" secondAttribute="trailing" constant="258" id="fFB-3N-99P"/>
                             <constraint firstItem="olE-nZ-gk6" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="hPV-Ka-VCa"/>
                             <constraint firstItem="yBy-db-pg2" firstAttribute="top" secondItem="Gyu-Ze-m4E" secondAttribute="bottom" constant="30" id="lrl-ih-6R6"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="trailing" secondItem="Vrb-y4-K8c" secondAttribute="trailing" constant="50" id="oBD-00-Gvc"/>
-                            <constraint firstItem="ENP-Fc-O3P" firstAttribute="top" secondItem="OcD-8l-JDv" secondAttribute="top" constant="50" id="qit-r3-Umi"/>
+                            <constraint firstItem="ENP-Fc-O3P" firstAttribute="top" secondItem="OcD-8l-JDv" secondAttribute="top" constant="135" id="qit-r3-Umi"/>
                             <constraint firstItem="OcD-8l-JDv" firstAttribute="bottom" secondItem="epl-Qf-tbn" secondAttribute="bottom" constant="5" id="s1q-Hm-ozP"/>
                             <constraint firstItem="olE-nZ-gk6" firstAttribute="top" secondItem="4P4-Kz-gfw" secondAttribute="bottom" constant="30" id="tN7-tj-agd"/>
                             <constraint firstItem="ENP-Fc-O3P" firstAttribute="leading" secondItem="OcD-8l-JDv" secondAttribute="leading" constant="50" id="wbr-Rd-Gfj"/>
@@ -608,6 +625,7 @@
                         <outlet property="descriptionTextField" destination="Gyu-Ze-m4E" id="uik-oe-MJ7"/>
                         <outlet property="dueDateTextField" destination="4P4-Kz-gfw" id="Cb1-Rd-r2Q"/>
                         <outlet property="groupNameTextField" destination="Vrb-y4-K8c" id="gDe-6w-qoy"/>
+                        <outlet property="taskNameTextField" destination="W0R-b1-Tl6" id="Hko-so-zFO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EyI-aO-t6C" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
