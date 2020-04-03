@@ -23,10 +23,21 @@ class HomeScreenViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         ref = Database.database().reference()
-        let cell = tableView.dequeueReusableCell(withIdentifier: "homeScreen", for: indexPath) as! homeScreenCell 
+        let cell = tableView.dequeueReusableCell(withIdentifier: "homeScreen", for: indexPath) as! homeScreenCell
         cell.groupNameLabel.text = groupArray[indexPath.row]
         return cell
-    } 
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? homeScreenCell {
+            if let groupViewController = segue.destination as? GroupViewController {
+                // add database read function
+                // webViewController.url = cell.url this line is from the JSON project
+                // groupViewController.name = name of group
+                // groupViewController.tasks = array fo tasks from database
+            }
+        }
+    }
     
     
     

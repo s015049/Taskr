@@ -335,7 +335,7 @@
                                     <color key="titleColor" red="0.097692497259999997" green="0.1954108349" blue="0.3243815893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="UEl-Ae-trF" kind="show" id="3hV-5P-mjV"/>
+                                    <segue destination="UEl-Ae-trF" kind="show" identifier="homeScreenCellToGroupView" id="3hV-5P-mjV"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -645,7 +645,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="groupNameLabel" destination="E1s-q3-e8K" id="OQm-it-exh"/>
-                                            <segue destination="7fn-WP-GGI" kind="show" id="eTc-xf-xOj"/>
+                                            <segue destination="7fn-WP-GGI" kind="show" id="GED-fD-Pro"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -676,6 +676,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Dsm-La-VZr"/>
-        <segue reference="eTc-xf-xOj"/>
+        <segue reference="egS-c6-7H3"/>
     </inferredMetricsTieBreakers>
 </document>
