@@ -19,6 +19,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         groupNameLabel.text! = groupName
+        getTasks()
         super.viewDidLoad()
     }
     
@@ -30,6 +31,7 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         do { // will print true or false
             self.tasksArr = try JSONSerialization.readJSON(withFilename: "tasks") as! [String]
+            print(tasksArr.count)
             return tasksArr.count
         }
         catch {
@@ -71,10 +73,10 @@ class GroupViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.dueDateLabel.text = task.dueDate
         cell.descriptionLabel.text = task.description
         var members : String = task.member
-        for var i in range 0...members.count-1{
-            if members[i] == "/"{
-                members[i] = ", "
-            }
+        let arr = members.components(separatedBy: "/")
+        members = ""
+        for i in arr{
+            members += i + ", "
         }
         cell.memberLabel.text = members
         cell.taskNameLabel.text = task.taskName
